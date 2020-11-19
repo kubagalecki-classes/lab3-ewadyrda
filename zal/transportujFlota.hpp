@@ -5,28 +5,29 @@
 unsigned int transportujFlota(unsigned int towar)
 {
     
-	int liczba_statkow=0;
-	Stocznia stocznia{};
-	
-	while(towar>0)
-		{
-			Statek* s1 = stocznia();
-			
-			if(typeid(*(s1))==typeid(Zaglowiec))
-				{ 
-					liczba_statkow++;
-				}
-			if(towar>s1->transportuj()
-			{
-				towar-=s1->transportuj();
-				delete s1;
+	int ship_number = 0;
+    	Stocznia s{};
 
-			}
-			else
-			{
-				delete s1;
-				break;
-			}
-		}
-    	return liczba_statkow;
+    	while (towar > 0) 
+	{
+        	Statek* boat = s();
+
+        	if (typeid(*(boat)) == typeid(Zaglowiec)) 
+        	{
+           		ship_number++;
+        	}
+
+        	if (towar > boat->transportuj()) 
+        	{
+            		towar -= boat->transportuj();
+            		delete boat;
+        	}
+
+            	else 
+       		{
+            		delete boat;
+            		break;
+        	}
+    	}
+    return ship_number;
 }
