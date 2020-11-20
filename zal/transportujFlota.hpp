@@ -12,10 +12,7 @@ unsigned int transportujFlota(unsigned int towar)
 	{
         	Statek* boat = s();
 
-        	if (typeid(*(boat)) == typeid(Zaglowiec)) 
-        	{
-           		ship_number++;
-        	}
+           	ship_number++;
 
         	if (towar > boat->transportuj()) 
         	{
