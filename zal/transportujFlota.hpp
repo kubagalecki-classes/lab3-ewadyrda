@@ -12,7 +12,7 @@ unsigned int transportujFlota(unsigned int towar)
 	{
         	Statek* boat = s();
 		
-		if(std::dynamic_cast<Zaglowiec*>(boat)!=nullptr)
+		if(dynamic_cast<Zaglowiec*>(boat)!=nullptr)
 		{
            		ilosc_zaglowcow++;
 		}
