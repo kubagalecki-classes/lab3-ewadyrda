@@ -5,14 +5,17 @@
 unsigned int transportujFlota(unsigned int towar)
 {
     
-	int ship_number = 0;
+	unsigned int ilosc_zaglowcow = 0;
     	Stocznia s{};
 
     	while (towar > 0) 
 	{
         	Statek* boat = s();
-
-           	ship_number++;
+		
+		if(std::dynamic_cast<Zaglowiec*>(boat)!=nullptr)
+		{
+           		ilosc_zaglowcow++;
+		}
 
         	if (towar > boat->transportuj()) 
         	{
@@ -26,5 +29,5 @@ unsigned int transportujFlota(unsigned int towar)
             		break;
         	}
     	}
-    return ship_number;
+    return ilosc_zaglowcow;
 }
